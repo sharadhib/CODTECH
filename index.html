@@ -1,0 +1,384 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sharadhi - Personal Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300italic,400,700,900" rel="stylesheet">
+
+  <!-- External CSS Libraries -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+
+  <!-- Custom CSS -->
+  <style>
+    /* Dark theme background and text */
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    a {
+      color: #ff6f61;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: #f9d423;
+      text-decoration: none;
+    }
+
+    /* Navbar Dark Style */
+    .navbar-inverse {
+      background-color: #1f1f1f;
+      border-color: #222;
+    }
+    .navbar-inverse .navbar-brand,
+    .navbar-inverse .navbar-nav > li > a {
+      color: #f9d423;
+    }
+    .navbar-inverse .navbar-nav > li > a:hover,
+    .navbar-inverse .navbar-brand:hover {
+      color: #ff6f61;
+    }
+
+    /* Section banners */
+    .section-banner {
+      margin: 50px 0 30px;
+      color: #f9d423;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
+    .section-title {
+      font-size: 2.8em;
+      font-weight: 900;
+    }
+    .line {
+      display: inline-block;
+      width: 50px;
+      height: 2px;
+      background-color: #ff6f61;
+      margin: 0 15px 10px 15px;
+      vertical-align: middle;
+      border-radius: 2px;
+    }
+
+    /* Hero section */
+    #twoam {
+      background: linear-gradient(135deg, #2c3e50 0%, #000000 100%);
+      color: #f9d423;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    #twoam h2 {
+      font-weight: 300; 
+      font-size: 1.8em; 
+      letter-spacing: 3px; 
+      margin-bottom: 0.5em; 
+      text-transform: uppercase; 
+      opacity: 0.85;
+      animation: fadeInDown 1.2s ease forwards;
+    }
+    #twoam h1 {
+      font-weight: 900; 
+      font-size: 4.5em; 
+      letter-spacing: 8px; 
+      margin-bottom: 0.3em; 
+      opacity: 0;
+      animation: fadeInUp 1.5s ease forwards;
+    }
+    #twoam h1:nth-of-type(1) {
+      animation-delay: 0.8s;
+    }
+    #twoam h1:nth-of-type(2) {
+      animation-delay: 1.1s;
+    }
+
+    #twoam > .container > .row > div > div {
+      font-family: 'Courier New', Courier, monospace; 
+      font-size: 1.2em; 
+      display: inline-block; 
+      text-align: left; 
+      background: rgba(249, 212, 35, 0.1); 
+      padding: 25px 40px; 
+      border-radius: 10px; 
+      box-shadow: 0 0 15px rgba(249, 212, 35, 0.3);
+      color: #f9d423;
+      animation: fadeIn 2s ease forwards;
+      animation-delay: 1.5s;
+      opacity: 0;
+    }
+
+    #down i {
+      color: #f9d423;
+      cursor: pointer;
+    }
+
+    /* About and portfolio text color tweaks */
+    #about, #portfolio, #contact {
+      padding: 50px 15px;
+    }
+
+    /* Contact Section */
+    #contact a {
+      color: #f9d423;
+      text-decoration: none;
+    }
+    #contact a:hover {
+      color: #ff6f61;
+    }
+    .icon-contact i {
+      color: #f9d423;
+    }
+    .icon-contact span {
+      color: #f9d423;
+    }
+
+    /* Footer */
+    #social-footer {
+      background: #1f1f1f;
+      padding: 20px 0;
+      text-align: center;
+    }
+    #social-footer ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    #social-footer li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+    #social-footer .fa-stack-1x {
+      color: #f9d423;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+ <!-- Navigation Bar -->
+<nav id="nav-bar" class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header" style="display: flex; align-items: center;">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false" style="margin-right: 10px;">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar" style="background: #f9d423;"></span>
+        <span class="icon-bar" style="background: #f9d423;"></span>
+        <span class="icon-bar" style="background: #f9d423;"></span>
+      </button>
+      <a class="navbar-brand" href="#twoam" style="display: flex; align-items: center;">
+        
+        <span style="margin-left: 10px;">Sharadhi B</span>
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+ 
+
+
+<script>
+  // Add solid background on scroll for better readability
+  window.addEventListener('scroll', function() {
+    const nav = document.getElementById('nav-bar');
+    if (window.scrollY > 50) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+</script>
+
+
+  <!-- Hero Section -->
+<header id="twoam">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+        <h2>The portfolio of</h2>
+        <h1>SHARADHI</h1>
+        <h1>B</h1>
+
+        <div>
+          <span style="color: #ff6f61;">{</span><br>
+          &nbsp;&nbsp;<span style="color: #f9d423;">Student</span> : CSE Undergraduate<br>
+          &nbsp;&nbsp;<span style="color: #f9d423;">Developer</span> : Full-stack Web & Mobile<br>
+          &nbsp;&nbsp;<span style="color: #f9d423;">Passion</span> : AI, Machine Learning, & Open Source<br>
+          &nbsp;&nbsp;<span style="color: #f9d423;">Hobbies</span> : Coding challenges, Gaming, Blogging<br>
+          <span style="color: #ff6f61;">}</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="down" style="text-align: center; margin-top: 60px;">
+      <a href="#about" style="color: #f9d423; text-decoration: none;">
+        <i class="fa fa-chevron-circle-down fa-5x animated bounce" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</header>
+
+  <!-- About Section -->
+  <section id="about" class="container-fluid">
+    <div class="row section-banner">
+      <div class="col-md-offset-3 col-md-6 text-center">
+        <div>
+          <span class="line about"></span>
+          <span class="section-title about">about</span>
+          <span class="line about"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row max">
+      <div class="col-sm-4 text-center animated fadeInLeft">
+        <div class="desc">
+          <div class="icon-me"><i class="fa fa-user" style="color:#f9d423;"></i></div>
+          <p>A Web developer with an eye for design, UX and UI development and a strong desire to learn and create.</p>
+        </div>
+      </div>
+      <div class="col-sm-4 text-center animated fadeInUp">
+        <div class="desc">
+          <div class="icon-me"><i class="fa fa-mortar-board" style="color:#f9d423;"></i></div>
+          <p>I firmly believe in life long learning and I'm constantly exploring new ideas and technologies.</p>
+        </div>
+      </div>
+      <div class="col-sm-4 text-center animated fadeInRight">
+        <div class="desc">
+          <div class="icon-me"><i class="fa fa-rocket" style="color:#f9d423;"></i></div>
+          <p>My interests are wide with formal qualifications in Biology, Coding and Education.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="container-fluid">
+    <div class="row section-banner">
+      <div class="col-md-offset-3 col-md-6 text-center">
+        <div>
+          <span class="line portfolio"></span>
+          <span class="section-title portfolio">portfolio</span>
+          <span class="line portfolio"></span>
+        </div>
+      </div>
+    </div>
+    <div class="row max">
+      <div class="col-sm-offset-2 col-sm-8 text-center">
+        <div class="desc">
+          <p>These items are mainly exercises done during a full stack development course with Free Code Camp.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row" id="theProjects"></div>
+  </section>
+
+ <!-- Contact Section -->
+<section id="contact" class="container-fluid">
+  <div class="row section-banner">
+    <div class="col-md-offset-3 col-md-6 text-center">
+      <div>
+        <span class="line contact"></span>
+        <span class="section-title contact">contact</span>
+        <span class="line contact"></span>
+      </div>
+    </div>
+  </div>
+  <div class="row max text-center" style="padding: 20px 0;">
+    <div class="icon-contact" style="margin-bottom: 20px;">
+      <a href="mailto:shrru2530@gmail.com" data-toggle="tooltip" title="Email">
+        <i class="fa fa-envelope fa-3x"></i> 
+        <span style="display: inline-block; margin-left: 10px; font-size: 1.2em; vertical-align: middle;">shrru2530@gmail.com</span>
+      </a>
+    </div>
+    <div class="icon-contact" style="margin-bottom: 20px;">
+      <a href="https://www.facebook.com/share/14GY5oo4bn6/" target="_blank" data-toggle="tooltip" title="Facebook">
+        <i class="fa fa-facebook-square fa-3x"></i>
+        <span style="display: inline-block; margin-left: 10px; font-size: 1.2em; vertical-align: middle;">Facebook Profile</span>
+      </a>
+    </div>
+    <div class="icon-contact" style="margin-bottom: 20px;">
+  <a href="https://www.instagram.com/sharadhi_b?igsh=MW82aDRmbGt2NWk5ZQ==" target="_blank" data-toggle="tooltip" title="Instagram">
+    <i class="fa fa-instagram fa-3x"></i>
+    <span style="display: inline-block; margin-left: 10px; font-size: 1.2em; vertical-align: middle;">Instagram Profile</span>
+  </a>
+</div>
+
+    <div class="icon-contact" style="margin-bottom: 20px;">
+      <a href="https://www.linkedin.com/in/sharadhi-b-0a1106216?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" data-toggle="tooltip" title="LinkedIn">
+        <i class="fa fa-linkedin-square fa-3x"></i>
+        <span style="display: inline-block; margin-left: 10px; font-size: 1.2em; vertical-align: middle;">LinkedIn Profile</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer id="social-footer">
+    <ul>
+      <li class="highlight">
+        <a class="fa-stack fa-1x" href="mailto:2am.ninja@outlook.com" title="Email">
+          <i class="fa fa-square fa-stack-2x"></i>
+          <i class="fa fa-envelope fa-stack-1x blacktext"></i>
+        </a>
+      </li>
+      <!-- Add more social icons as needed -->
+    </ul>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://codepen.io/MutantSpore/pen/WMQWVB.js"></script>
+</body>
+</html>
