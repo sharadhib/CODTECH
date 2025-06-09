@@ -45,8 +45,13 @@ Minimal footer with email icon and room for additional social links.
 
 💡 Tech Stack:
 HTML5 & CSS3 (custom styling and layout)
+
 Bootstrap 3.3.5 (grid and responsive design)
+
 jQuery (smooth scrolling)
+
 Font Awesome (icons)
+
 Google Fonts (Open Sans, Roboto, Lato)
+
 Animate.css (fade-in, bounce animations)
